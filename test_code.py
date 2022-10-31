@@ -61,6 +61,8 @@ def codon_table(sequence):
         "GAU":"Asp", "GAC":"Asp", "GAA":"Glu", "GAG":"Glu",
         "GGU":"Gly", "GGC":"Gly", "GGA":"Gly", "GGG":"Gly",}
 
+    stops = ["UAG", "UAA", "UGA"]
+    
     aa_profile = ""
 
     #Break RNA into List of 3 nucleotides
@@ -73,13 +75,7 @@ def codon_table(sequence):
         codon.find("AUG")
         #Break loop when approached with stop Codon
         if codon in codons.keys():
-            if codon == "UAG":
-                aa_profile += "STOP"
-                break
-            if codon == "UAA":
-                aa_profile += "STOP"
-                break
-            if codon == "UGA":
+            if codon in stops:
                 aa_profile += "STOP"
                 break
             profile = codons[codon]
