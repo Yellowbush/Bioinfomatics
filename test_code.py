@@ -1,3 +1,10 @@
+# Jason Sy
+# B Bio 340: Intro to Bioinformatics
+# 10/30/2022
+#
+# Convert nucleotide to protein, and test mutation type and similarity
+
+
 from itertools import dropwhile
 import sys
 from difflib import SequenceMatcher
